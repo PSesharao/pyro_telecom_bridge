@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} [%level] [%logger{36}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Gateway loggers at DEBUG level for Diameter protocol exchanges -->
+    <logger name="com.telecombridge.gateway.diameter" level="DEBUG" />
+    <logger name="com.telecombridge.gateway.service" level="DEBUG" />
+    <logger name="com.telecombridge.gateway.metrics" level="INFO" />
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>

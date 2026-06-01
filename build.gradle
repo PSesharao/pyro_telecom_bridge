@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.spring.boot) apply false
+    alias(libs.plugins.spring.dependency.management) apply false
+}
+
+allprojects {
+    group = 'com.telecombridge'
+    version = '1.0.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    dependencies {
+        testImplementation platform(rootProject.libs.junit.bom)
+        testImplementation rootProject.libs.junit.jupiter
+        testImplementation rootProject.libs.jqwik
+    }
+
+    tasks.withType(Test) {
+        useJUnitPlatform {
+            includeEngines 'junit-jupiter', 'jqwik'
+        }
+    }
+}

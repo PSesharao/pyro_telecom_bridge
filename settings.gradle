@@ -1,0 +1,6 @@
+rootProject.name = 'telecom-bridge'
+
+include 'diameter-codec'
+include 'gateway'
+include 'simulator'
+include 'load-test'

@@ -1,0 +1,8 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.gatling)
+}
+
+dependencies {
+    gatling libs.gatling.charts.highcharts
+}

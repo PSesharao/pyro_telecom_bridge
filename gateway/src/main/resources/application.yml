@@ -1,0 +1,16 @@
+diameter:
+  host: localhost
+  port: 3868
+  origin-host: CTOPUP
+  origin-realm: ctop.com
+  destination-realm: BSNL.NET
+  request-timeout-ms: 5000
+  watchdog-interval-ms: 30000
+  watchdog-timeout-ms: 10000
+  thread-pool-size: 4
+
+metrics:
+  interval-ms: 60000
+
+server:
+  port: 8080

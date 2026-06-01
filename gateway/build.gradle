@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+}
+
+dependencies {
+    implementation project(':diameter-codec')
+
+    implementation libs.spring.boot.starter.web
+    implementation libs.spring.boot.starter.validation
+
+    implementation libs.netty.buffer
+    implementation libs.netty.transport
+    implementation libs.netty.codec
+    implementation libs.netty.handler
+
+    testImplementation libs.spring.boot.starter.test
+    testImplementation project(':simulator')
+}
