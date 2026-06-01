@@ -1,8 +1,24 @@
+
 # Gradle
 .gradle/
-build/
+# Exclude most build directories but keep Gatling reports
+*/build/classes/
+*/build/libs/
+*/build/tmp/
+*/build/generated/
+gateway/build/
+simulator/build/
+diameter-codec/build/
+# Keep load-test Gatling reports for assignment submission
+load-test/build/classes/
+load-test/build/libs/
+load-test/build/tmp/
+load-test/build/generated/
 !gradle/wrapper/gradle-wrapper.jar
 
+
+.kiro/
+ 
 # IDE
 .idea/
 *.iml
@@ -13,35 +29,34 @@ build/
 .factorypath
 *.swp
 *.swo
-
+ 
 # Maven (if any target dirs exist)
 target/
-
+ 
 # OS
 .DS_Store
 Thumbs.db
-
+ 
 # Logs
 *.log
-
+ 
 # Environment
 .env
-
+ 
 # Python (PCAP analysis scripts)
 __pycache__/
 *.pyc
-
+ 
 # jqwik
 .jqwik-database
-
+ 
 # Reference materials (assessment docs, provided trace, analysis scripts)
 reference/
-
-.kiro
-
+ 
+ 
 # Java
 *.class
 hs_err_pid*
-
+ 
 # Tool versions
 .tool-versions
